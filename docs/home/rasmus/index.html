@@ -5,7 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>Welcome to the bestest website there is on the internet</h1>
+<body style="background-color:paleturquoise">
+    <h1>A very good website</h1>
+    <p style="color:red">Yes it really is</p>
+    <button id="Knapp" onclick="clickFunction()">Click</button>
+    <br>
+    <button id="Upgradera" onclick="upgradeFunction()">Buy Upgrade</button>
+    <label id="UpgradePrice"></label>
+
+<script>
+var clicks = 0
+var multiplier = 1
+var inflation = 1
+function clickFunction(){
+    clicks = clicks + 1 * multiplier
+    document.getElementById("Knapp").innerHTML = clicks
+}
+
+function upgradeFunction(){
+    var price = 10 * inflation
+    document.getElementById("UpgradePrice").innerHTML = price
+    if (clicks >= price){
+        clicks = clicks - 10 * inflation
+        multiplier = multiplier + 1
+        inflation = inflation + 1.5
+        document.getElementById("Knapp").innerHTML = clicks
+    }
+}
+
+</script>
 </body>
 </html>
